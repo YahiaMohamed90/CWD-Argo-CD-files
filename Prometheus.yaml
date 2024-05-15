@@ -24,6 +24,9 @@ spec:
             server:
               service:
                 type: LoadBalancer
+            alertmanager:
+               enabled: true
+               replicas: 2
   syncPolicy:
     automated:
       prune: true
