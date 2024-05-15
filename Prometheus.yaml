@@ -22,7 +22,7 @@ spec:
         values: |
             server:
               service:
-                type: LoadBalancer
+                type: NodePort
   syncPolicy:
     automated:
       prune: true
