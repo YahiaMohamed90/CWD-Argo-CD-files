@@ -14,6 +14,7 @@ spec:
   sources:
     - repoURL: https://github.com/YahiaMohamed90/CWD-Argo-CD-files.git
       targetRevision: HEAD
+      path: /
       ref: master
     - repoURL: https://prometheus-community.github.io/helm-charts/
       chart: prometheus
@@ -22,7 +23,7 @@ spec:
         values: |
             server:
               service:
-                type: NodePort
+                type: LoadBalancer
   syncPolicy:
     automated:
       prune: true
