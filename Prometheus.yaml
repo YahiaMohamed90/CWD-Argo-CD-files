@@ -30,8 +30,3 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-
-  autoSync:
-    prune: true
-    selfHeal: true
-    interval: 1m  # Adjust the interval as needed (e.g., 5m for 5 minutes)   
