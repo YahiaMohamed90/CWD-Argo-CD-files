@@ -14,22 +14,24 @@ spec:
   sources:
     - repoURL: https://github.com/YahiaMohamed90/CWD-Argo-CD-files.git
       targetRevision: HEAD
-      path: /
+      path: promethues
       ref: master
     - repoURL: https://prometheus-community.github.io/helm-charts/
       chart: prometheus
-      targetRevision: 19.7.2
+      targetRevision: 25.0
       helm:
         values: |
             server:
               service:
-                type: LoadBalancer
-            alertmanager:
-               enabled: true
-               replicas: 2
+                type: ClustrtIP
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+
+  autoSync:
+    prune: true
+    selfHeal: true
+    interval: 1m  # Adjust the interval as needed (e.g., 5m for 5 minutes)   
