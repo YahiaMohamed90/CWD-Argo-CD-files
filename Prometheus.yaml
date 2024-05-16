@@ -14,16 +14,18 @@ spec:
   sources:
     - repoURL: https://github.com/YahiaMohamed90/CWD-Argo-CD-files.git
       targetRevision: HEAD
-      path: promethues
       ref: master
     - repoURL: https://prometheus-community.github.io/helm-charts/
       chart: prometheus
-      targetRevision: "19.7.2"
+      targetRevision: 19.7.2
       helm:
         values: |
             server:
               service:
-                type: ClustrtIP
+                type: ClusterIP
+            alertmanager:
+               enabled: true
+               replicas: 2
   syncPolicy:
     automated:
       prune: true
